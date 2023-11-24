@@ -470,14 +470,14 @@ namespace SteeringWheel
         private bool CheckDeviceSpecs(uint id)
         {
             bool buttonOK = joystick.GetVJDButtonNumber(id) >= 11;
-            bool discPovOK = joystick.GetVJDDiscPovNumber(id) >= 1;
+            //bool discPovOK = joystick.GetVJDDiscPovNumber(id) >= 1;
             bool axisXOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_X);
             bool axisYOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_Y);
             bool axisZOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_Z);
             bool axisXrotOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_RX);
             bool axisYrotOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_RY);
             bool axisZrotOK = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_RZ);
-            bool result = buttonOK && discPovOK &&
+            bool result = buttonOK && // discPovOK &&
                           axisXOK && axisYOK && axisZOK &&
                           axisXrotOK && axisYrotOK && axisZrotOK;
             return result;

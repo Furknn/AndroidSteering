@@ -42,7 +42,7 @@ import java.util.Objects;
 // Reference of navigation drawer: https://guides.codepath.com/android/fragment-navigation-drawer
 
 enum ControllerMode {
-    None, Default, Alter, GamePad
+    None, Default, Alter, GamePad, Simple
 }
 
 public class MainActivity extends AppCompatActivity {
@@ -180,6 +180,12 @@ public class MainActivity extends AppCompatActivity {
             } else if (fragmentId == R.id.nav_control_alt_frag) {
                 fragment = FragmentControlAlter.class.newInstance();
                 controllerMode = ControllerMode.Alter;
+                globalBuffer.turnOn();
+                globalBuffer.setUpdatePitch(true);
+                globalBuffer.setUpdateRoll(false);
+            } else if (fragmentId == R.id.nav_control_simple_frag) {
+                fragment = FragmentControlSimple.class.newInstance();
+                controllerMode = ControllerMode.Simple;
                 globalBuffer.turnOn();
                 globalBuffer.setUpdatePitch(true);
                 globalBuffer.setUpdateRoll(false);

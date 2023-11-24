@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                if (controllerMode == ControllerMode.Default || controllerMode == ControllerMode.Alter) {
+                if (controllerMode == ControllerMode.Default || controllerMode == ControllerMode.Alter || controllerMode == ControllerMode.Simple) {
                     ProgressBar vHorizontal = findViewById(R.id.progressBarAcc);
                     ProgressBar vVertical = findViewById(R.id.progressBarSteer);
                     float progressHorizontal = (serviceMotion.readRoll() + 90.0f) / 180.0f * 100.0f;

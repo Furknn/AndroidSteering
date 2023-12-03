@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PersistableBundle;
+import android.os.Vibrator;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Pair;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private float displayY;
 
     private final Handler handlerUpdateUI = new Handler(Looper.getMainLooper());
+
     private final Runnable runnableUpdateUI = new Runnable() {
         @SuppressLint("DefaultLocale")
         @Override
@@ -369,10 +371,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean touchLB(View view, MotionEvent e) {
+        Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
+        vibe.vibrate(10);
         return touchButton(view, e, MotionButton.LB);
     }
 
     public boolean touchRB(View view, MotionEvent e) {
+        Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
+        vibe.vibrate(10);
         return touchButton(view, e, MotionButton.RB);
     }
 
